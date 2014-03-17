@@ -20,6 +20,7 @@ app.jinja_env.globals.update(update_query_argument=util.update_query_argument)
 import admin
 import auth
 import user
+import contact
 
 
 if config.DEVELOPMENT:
@@ -72,7 +73,9 @@ def profile():
   if form.validate_on_submit():
     form.populate_obj(user_db)
     user_db.put()
-    return flask.redirect(flask.url_for('welcome'))
+    return flask.flash('New contact was successfully created!', category='success')
+    return flask.redirect(flask.url_for('contact_list', order='-created'))
+    #return flask.redirect(flask.url_for('welcome'))
 
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_db(user_db)
