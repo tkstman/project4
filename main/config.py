@@ -44,6 +44,7 @@ SCRIPTS = [
         'ext/js/bootstrap/collapse.js',
         'ext/js/bootstrap/dropdown.js',
         'ext/js/bootstrap/tooltip.js',
+        'ext/js/bootstrap/cards.js',
       ]),
     ('scripts', [
         'src/script/common/service.coffee',

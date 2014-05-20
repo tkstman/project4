@@ -21,7 +21,7 @@ import admin
 import auth
 import user
 import contact
-
+#import cards.py
 
 if config.DEVELOPMENT:
   from werkzeug import debug
@@ -34,6 +34,20 @@ if config.DEVELOPMENT:
 @app.route('/')
 def welcome():
   return flask.render_template('welcome.html', html_class='welcome')
+
+
+###############################################################################
+# send you to player 1 game or player 2 game
+###############################################################################
+@app.route('/cards/')
+@auth.login_required
+def cards(name=None):
+    return flask.render_template('cards.html',name=name)
+  
+@app.route('/play/')
+def play(name=None):
+    return flask.render_template('play.html',name=name)
+
 
 
 ###############################################################################
