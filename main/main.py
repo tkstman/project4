@@ -31,9 +31,13 @@ if config.DEVELOPMENT:
 ###############################################################################
 # Main page
 ###############################################################################
+#@app.route('/')
+#def welcome():
+#return flask.render_template('welcome.html', html_class='welcome')
+  
 @app.route('/')
 def welcome():
-  return flask.render_template('welcome.html', html_class='welcome')
+  return flask.render_template('start.html', html_class='welcome')
 
 
 ###############################################################################
@@ -41,12 +45,13 @@ def welcome():
 ###############################################################################
 @app.route('/cards/')
 @auth.login_required
-def cards(name=None):
-    return flask.render_template('cards.html',name=name)
+def cards():
+    return flask.render_template('cards.html',html_class='cards', title='Single Player Game')
   
 @app.route('/play/')
-def play(name=None):
-    return flask.render_template('play.html',name=name)
+@auth.login_required
+def play():
+    return flask.render_template('play.html',html_class='play', title='Two Player Game')
 
 
 

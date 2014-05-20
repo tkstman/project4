@@ -55,3 +55,11 @@ SCRIPTS = [
         'src/script/site/user.coffee',
       ]),
   ]
+  
+MYSCRIPTS = [
+    'ext/js/bootstrap/start.js',
+    ]
+    
+PLAYSCRIPT = [
+    'ext/js/bootstrap/play.js',
+    ]
