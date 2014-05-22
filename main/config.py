@@ -35,6 +35,8 @@ STYLES = [
 
 SCRIPTS = [
     ('libs', [
+        'ext/js/jquery/jquery-1.11.0.js',
+        'ext/js/jquery/jquery-1.11.0.min.js',
         'ext/js/jquery/jquery.js',
         'ext/js/momentjs/moment.js',
         'ext/js/nprogress/nprogress.js',
@@ -62,4 +64,7 @@ MYSCRIPTS = [
     
 PLAYSCRIPT = [
     'ext/js/bootstrap/play.js',
+    'ext/js/jquery/jquery-1.11.0.js',
+    'ext/js/jquery/jquery-1.11.0.min.js',
+    'ext/js/jquery/jquery.js',
     ]

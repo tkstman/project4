@@ -28,7 +28,13 @@
       # endblock
     </div>
     # include 'bit/footer.html'
-    # include 'bit/script.html'
+    # for script in config.PLAYSCRIPT
+        # if config.DEVELOPMENT
+            <script src="/p/{{script.replace('.coffee', '.js').replace('src/script/', 'dst/script/')}}?{{config.CURRENT_VERSION_ID}}"></script>
+        # else
+            <script src="/p/min/script/{{module}}.min.js?{{config.CURRENT_VERSION_ID}}"></script>
+        # endif
+    # endfor
     # block scripts
     # endblock
   </body>
